@@ -1,4 +1,4 @@
-﻿#Written by Patrik Ernholdt
+#Written by Patrik Ernholdt
 #Version 1.1
 #This script will copy all your photos in a directory and sort them after year and month by meta data.
 #If file does not have any creation date in meta data it will sort them after date created on drive instead.
@@ -107,7 +107,7 @@ foreach ($file in $files){
 			New-Item $directory -type directory | Out-Null
 		}
 		
-		$newFileName = "$fileName-$fileGuid$fileExtension"
+		$newFileName = "$fileName$fileExtension"
 		$targetFile = "$directory\$newFileName"
 		
 		Copy-Item $file.FullName -Destination $targetFile
