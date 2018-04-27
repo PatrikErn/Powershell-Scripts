@@ -4,6 +4,7 @@
 #If file does not have any creation date in meta data it will sort them after date created on drive instead.
 #Warning: If no directory is specified it will try to sort from running directory.
 #This is my GUI-version of Photosort.ps1
+#It will also open the destination folder so you can view the results.
 
 [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") 
 [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") 
@@ -18,7 +19,7 @@ $objForm.Add_KeyDown({if ($_.KeyCode -eq "Enter")
     {$x=$objTextBox.Text;$objForm.Close()}})
 $objForm.Add_KeyDown({if ($_.KeyCode -eq "Escape") 
     {$objForm.Close()}})
-
+#Buttons
 $OKButton = New-Object System.Windows.Forms.Button
 $OKButton.Location = New-Object System.Drawing.Size(75,120)
 $OKButton.Size = New-Object System.Drawing.Size(75,23)
@@ -34,6 +35,7 @@ $CancelButton.Add_Click({$objForm.Close()})
 $objForm.Controls.Add($CancelButton)
 
 #Paths to enter
+#Working Folder
 $objLabel = New-Object System.Windows.Forms.Label
 $objLabel.Location = New-Object System.Drawing.Size(10,20) 
 $objLabel.Size = New-Object System.Drawing.Size(280,20) 
@@ -44,7 +46,7 @@ $objTextBox = New-Object System.Windows.Forms.TextBox
 $objTextBox.Location = New-Object System.Drawing.Size(10,40) 
 $objTextBox.Size = New-Object System.Drawing.Size(260,20) 
 $objForm.Controls.Add($objTextBox) 
-
+#Destination Folder
 $objLabel2 = New-Object System.Windows.Forms.Label
 $objLabel2.Location = New-Object System.Drawing.Size(10,60) 
 $objLabel2.Size = New-Object System.Drawing.Size(280,20) 
