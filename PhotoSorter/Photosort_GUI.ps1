@@ -1,8 +1,7 @@
 #Written by Patrik Ernholdt
-#Version 1.1
+#Version 1.2
 #This script will copy all your photos in a directory and sort them after year and month by meta data.
 #If file does not have any creation date in meta data it will sort them after date created on drive instead.
-#Warning: If no directory is specified it will try to sort from running directory.
 #This is my GUI-version of Photosort.ps1
 #It will also open the destination folder so you can view the results.
 
@@ -44,7 +43,8 @@ $objForm.Controls.Add($objLabel)
 
 $objTextBox = New-Object System.Windows.Forms.TextBox 
 $objTextBox.Location = New-Object System.Drawing.Size(10,40) 
-$objTextBox.Size = New-Object System.Drawing.Size(260,20) 
+$objTextBox.Size = New-Object System.Drawing.Size(260,20)
+$objTextBox.Text = "Your\path\here" 
 $objForm.Controls.Add($objTextBox) 
 #Destination Folder
 $objLabel2 = New-Object System.Windows.Forms.Label
@@ -55,7 +55,8 @@ $objForm.Controls.Add($objLabel2)
 
 $objTextBox2 = New-Object System.Windows.Forms.TextBox 
 $objTextBox2.Location = New-Object System.Drawing.Size(10,80) 
-$objTextBox2.Size = New-Object System.Drawing.Size(260,20) 
+$objTextBox2.Size = New-Object System.Drawing.Size(260,20)
+$objTextBox2.Text = "Your\path\here"  
 $objForm.Controls.Add($objTextBox2) 
 
 $objForm.Topmost = $True
