@@ -1,4 +1,4 @@
-﻿#Written by Patrik Ernholdt
+#Written by Patrik Ernholdt
 # Version 1.2
 #This script will copy all your photos in a directory and sort them after year and month by meta data.
 #If file does not have any creation date in meta data it will sort them after date created on drive instead.
@@ -8,8 +8,8 @@
 #If file does not have any creation date in meta data it will sort them after date created on drive instead.
 #Warning: If no directory is specified it will try to sort from running directory.
 
-$srcFolder = "Enter your working folder here"
-$taregtFolder = "Enter destination folder here"
+$srcFolder = "C:\Users\patrik\Pictures"
+$taregtFolder = "C:\Users\patrik\Pictures\Sorted"
 
 $files = Get-ChildItem -Path $srcFolder -include *.* –Recurse 
 
@@ -28,7 +28,7 @@ foreach ($file in $files){
 		$dateTaken = $shellfolder.GetDetailsOf($shellfile, 12)
 			
 		if([string]::IsNullOrWhiteSpace($dateTaken)) {    
-			$parseDate =[datetime]$file.CreationTime  
+			$parseDate =[datetime]$file.LastWriteTime  
 		} 	
 		else{
 			#http://stackoverflow.com/questions/25474023/file-date-metadata-not-displaying-properly
