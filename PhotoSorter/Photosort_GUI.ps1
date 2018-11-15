@@ -86,7 +86,7 @@ foreach ($file in $files){
 		$dateTaken = $shellfolder.GetDetailsOf($shellfile, 12)
 			
 		if([string]::IsNullOrWhiteSpace($dateTaken)) {    
-			$parseDate =[datetime]$file.CreationTime  
+			$parseDate =[datetime]$file.LastWriteTime  
 		} 	
 		else{
 			#http://stackoverflow.com/questions/25474023/file-date-metadata-not-displaying-properly
