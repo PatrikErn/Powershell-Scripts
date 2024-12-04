@@ -3,7 +3,7 @@
 # Remove local admins Script.
 # Removes empty SID from Local administrators group
 # Leaves Domain Administrators group intact
-# Add exeptions in variable to add your own list of approved accounts.
+# Add exceptions in variable to add your own list of approved accounts.
 
 # Define the exceptions based on name patterns
 $exceptions = @(
