@@ -4,7 +4,7 @@
 # Add specified local admin and also sets domain admins in Local Administrators group.
 # System Language is not a factor since it targets the SID for local group.
 # Domain independant , checks for conected domain.
-# 
+# Disables local administrators account
 
 # Variables
 $userName = "Loc.AD" # Local User = Set to what you want | 
